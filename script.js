@@ -5,6 +5,7 @@ function deleteTask(obj){
     obj.parentNode.remove();
     toLocal();
 }
+
 function insert() {
     let task = document.getElementById("input-task").value;
     let input = `<li class="list_item">
@@ -14,7 +15,9 @@ function insert() {
         </li>`;
     list.insertAdjacentHTML("beforeend", input);
     toLocal();
+    document.getElementById("input-task").value = '';
 }
+
 function toggleTask(element) {
     let span = element.parentElement.querySelector(".task");
     if (element.checked) {
@@ -25,8 +28,6 @@ function toggleTask(element) {
         toLocal();
     }
 }
-
-
 
 function toLocal() {
     todoList = list.innerHTML;
