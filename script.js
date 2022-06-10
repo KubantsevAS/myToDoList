@@ -8,6 +8,7 @@ function deleteTask(obj){
 
 function insert() {
     let task = document.getElementById("input-task").value;
+    if (task === "") return;
     let input = `<li class="list_item">
             <input type="checkbox" id="box" onchange="toggleTask(this)">
             <span class="task" id="text">${task}</span>
